@@ -133,8 +133,19 @@ client.on("message", (message) => {
         })
     }
 
+    else if (command === "wave") {
+        if (args.length > 0) {
+            args.forEach(arg => {
+                message.channel.send(`:wave: ${arg}`);
+            });
+        } else {
+            message.channel.send("Use .dev <username> to wave at someone");
+        }
+    }
+
+
     else if(command === "dev") {
-        message.reply(`More cool features coming soon :partying_face:`);
+        console.log(`Works! Arguments passed: ${args}`);
     }
 })
 
