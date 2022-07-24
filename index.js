@@ -19,11 +19,10 @@ const months = {
 }
 
 const answers = [];
-const IMG_API_URL = 'https://api.unsplash.com';
 const RANDOM_CAT_IMG_API_URL = 'https://aws.random.cat/meow';
-const CLIENT_ID = 'Lt3XlkV5aNT9hLpRJoN_0-bT0EPiMl8ACE8zObTSfvI';
-const PIXBAY_IMG_API = 'https://pixabay.com/api/';
-const PIXBAY_API_KEY = '10311354-bdeb41945cd97304fe8b2c229';
+const TENOR_API_KEY = `${config.TENOR_API_KEY}`
+const CLIENT_KEY = `maestro_bot`;
+const TENOR_API = `https://tenor.googleapis.com/v2/`
 
 client.on("message", (message) => {
     if (message.author.bot) return;
@@ -113,16 +112,14 @@ client.on("message", (message) => {
             query = args.join("+");
         }
         else {
-            message.channel.send("No search terms specified, picking mountains as default parameter");
-            query = "mountains";
+            message.channel.send("No search terms specified, picking dance as default parameter");
+            query = "dance";
         }
-        fetch(`${PIXBAY_IMG_API}?key=${PIXBAY_API_KEY}&q=${query}`, {
+        fetch(`${TENOR_API}search?key=${TENOR_API_KEY}&q=${query}&client_key=${CLIENT_KEY}&limit=1`, {
             method : 'GET'
         }).then(res => res.json()).then(json => {
-            if (json.hits.length > 0) {
-                const length = json.hits.length-1;
-                const index = Math.floor(Math.random() * length);
-                const imgUrl = json.hits[index].webformatURL;
+            if (json.results.length > 0) {
+                const imgUrl = json.results[0]["media_formats"]["tinygif"]["url"];
                 message.channel.send("Here: ", {
                     files : [imgUrl]
                 });
