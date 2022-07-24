@@ -1,4 +1,4 @@
-# **Maestro Bot** [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+# **Maestro Bot v1.1** [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 A bot that can be used for anything fun :)
 
@@ -15,10 +15,12 @@ git clone https://github.com/MohitR1999/maestro-bot.git
 * Run ```cd maestro-bot``` and then do ```npm install```
 * Install nodemon for automatic restarting of the bot when you do any changes. Use ```npm install nodemon -g```
 * Create ```config.json``` file in the root directory of the repository. You need to add your BOT_TOKEN for the bot to work. Go to your discord developer account and generate it from [here](https://discord.com/developers/applications)
+* Get your tenor API key by signing up for Tenor [here](https://tenor.com/api_terms)
 * Structure your ```config.json``` file as follows:
 ```
 {
-    "BOT_TOKEN": "YOUR_BOT_TOKEN"
+    "BOT_TOKEN": "YOUR_BOT_TOKEN",
+    "TENOR_API_KEY": "YOUR_TENOR_API_KEY",
 }
 ```
 * Run ```npm start``` in the root directory of maestro-bot, and you can use it for everything fun :)
