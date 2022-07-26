@@ -1,6 +1,7 @@
 # **Maestro Bot v1.1** [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 A bot that can be used for anything fun :)
+For now it can give you memes in exchange of a text you provide, use .show <your words>
 
 Customize it the way you want, still in development phase and can be extended pretty quickly.
 
